@@ -1,31 +1,31 @@
 import type { Metadata, Viewport } from "next";
-import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
+import Shell from "@/components/console/Shell";
 import "./globals.css";
 
-const sans = Space_Grotesk({ variable: "--font-ui", subsets: ["latin"] });
-const mono = JetBrains_Mono({ variable: "--font-code", subsets: ["latin"] });
+const sans = Inter({ variable: "--font-sans", subsets: ["latin"] });
+const mono = JetBrains_Mono({ variable: "--font-mono", subsets: ["latin"], weight: ["400", "500"] });
 
 export const metadata: Metadata = {
-  title: "Yomoyaha Yeo — Software Developer",
+  metadataBase: new URL("https://yeo-portfolio-theta.vercel.app"),
+  title: { default: "Yomoyaha Yeo — Développeur logiciel", template: "%s — Yomoyaha Yeo" },
   description:
-    "Portfolio de Yomoyaha Yeo, développeur logiciel et étudiant en Master 1 Cybersécurité & IA : un bureau interactif avec terminal, assistant IA vocal, projets et scènes 3D.",
+    "Portfolio de Yomoyaha Yeo, développeur logiciel en Master 1 Cybersécurité et Intelligence Artificielle à l'ESATIC (Abidjan) : dossiers de projets, chronologie, compétences, activité GitHub et contact.",
   openGraph: {
-    title: "Yomoyaha Yeo — Software Developer",
-    description: "Un portfolio en forme de système d'exploitation : terminal, assistant IA, projets et 3D.",
+    title: "Yomoyaha Yeo — Développeur logiciel",
+    description: "Développeur logiciel, spécialisé en cybersécurité et en intelligence artificielle.",
     type: "website",
   },
 };
 
-export const viewport: Viewport = {
-  themeColor: "#07090f",
-  width: "device-width",
-  initialScale: 1,
-};
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0e1013" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr" className={`${sans.variable} ${mono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Shell>{children}</Shell>
+      </body>
     </html>
   );
 }

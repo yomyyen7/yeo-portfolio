@@ -1,5 +1,5 @@
-import Desktop from "@/components/os/Desktop";
+import Overview from "@/components/console/views/Overview";
 
 export default function Home() {
-  return <Desktop />;
+  return <Overview />;
 }

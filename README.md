@@ -1,21 +1,26 @@
-# YeoOS — portfolio de Yomoyaha Yeo
+# Portfolio de Yomoyaha Yeo
 
-Un portfolio en forme de système d'exploitation : écran de démarrage, bureau, fenêtres, terminal, scènes 3D et assistant IA vocal.
+Portfolio de Yomoyaha Yeo, développeur logiciel en Master 1 Cybersécurité et Intelligence Artificielle à l'ESATIC (Abidjan), présenté comme la console d'un analyste : barre latérale, vues, dossiers de projets, chronologie et flux d'activité.
 
 **En ligne :** https://yeo-portfolio-theta.vercel.app
 
-## Ce qu'on y trouve
+## Vues
 
-- **Bureau complet** : fenêtres déplaçables, redimensionnables et aimantées aux bords, dock, menu contextuel, recherche universelle (`Ctrl + K`).
-- **Terminal** : `aide`, `neofetch`, `projets`, `scan`, `matrix`, `fond bouclier`, `lang en`…
-- **3D** : trois scènes générées en code (noyau, réseau de neurones, bouclier), utilisées en fond d'écran et dans l'Atelier 3D.
-- **Assistant IA** : répond aux questions sur le profil, par écrit ou à la voix, et ouvre les fenêtres utiles.
-- **GitHub en direct** : les dépôts publics sont chargés depuis l'API GitHub.
-- **Français / anglais** : tout le contenu est bilingue.
+| Vue | Contenu |
+| --- | --- |
+| Vue d'ensemble | Identité, indicateurs, dossiers récents, chronologie et activité GitHub |
+| Dossiers | Un dossier par projet : besoin, réalisation, technologies, code source |
+| Chronologie | Formation, projets et diplômes par année |
+| Compétences | Technologies reliées aux dossiers où elles ont servi |
+| Activité | Dépôts et événements publics, lus en direct depuis l'API GitHub |
+| Contact | Coordonnées et formulaire (ouvre la messagerie du visiteur) |
+| CV (`/cv`) | Feuille imprimable, enregistrable en PDF |
+
+Raccourcis : `Ctrl K` ouvre la recherche (vues, dossiers, actions), `Ctrl J` ouvre la console (`help`, `ls`, `cases`, `open <dossier>`, `lang fr|en`). Le site est en français et en anglais.
 
 ## Technologies
 
-Next.js 15 · React 19 · TypeScript · Three.js (`@react-three/fiber`, `drei`, `postprocessing`) · SDK Anthropic · Vercel
+Next.js 15 · React 19 · TypeScript · Three.js (`@react-three/fiber`, pour le globe de la vue d'ensemble) · Vercel
 
 ## Lancer le projet
 
@@ -26,21 +31,17 @@ npm run dev
 
 Puis ouvrir http://localhost:3000.
 
-## Déploiement
-
-Le dépôt est relié à Vercel : chaque `git push` sur la branche `main` met le site en ligne automatiquement.
-
 ## Modifier le contenu
 
-Tout le contenu (présentation, projets, compétences, parcours) se trouve dans un seul fichier bilingue : `src/lib/data.ts`.
+Tout le contenu (présentation, dossiers, compétences, chronologie) se trouve dans un seul fichier bilingue : `src/lib/data.ts`.
 
-## Assistant IA
+Pour ajouter des captures d'écran à un dossier, placer les images dans `public/projects/` et renseigner le champ `images` du projet, par exemple `images: ["/projects/oxynova-1.png"]`.
 
-Sans configuration, l'assistant fonctionne en « mode démo » avec des réponses préparées (`src/lib/assistant.ts`). Pour utiliser un vrai modèle, définir ces variables d'environnement :
+## Déploiement
 
-| Variable | Rôle |
-| --- | --- |
-| `ANTHROPIC_API_KEY` | Clé d'API Anthropic (obligatoire pour activer l'IA) |
-| `CHAT_MODEL` | Modèle utilisé, par exemple `claude-haiku-5-5` (facultatif) |
+Le dépôt est relié à Vercel : chaque `git push` sur la branche `main` met le site en ligne ; les autres branches produisent une prévisualisation.
 
-Ne jamais placer la clé dans le code : les fichiers `.env*` sont ignorés par git.
+## Versions précédentes
+
+- `yeoos-v1` : première version, en forme de système d'exploitation.
+- Commit `8c5c4db` : version éditoriale sur fond clair.
