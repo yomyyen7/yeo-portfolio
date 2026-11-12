@@ -26,6 +26,10 @@ npm run dev
 
 Puis ouvrir http://localhost:3000.
 
+## Déploiement
+
+Le dépôt est relié à Vercel : chaque `git push` sur la branche `main` met le site en ligne automatiquement.
+
 ## Modifier le contenu
 
 Tout le contenu (présentation, projets, compétences, parcours) se trouve dans un seul fichier bilingue : `src/lib/data.ts`.
