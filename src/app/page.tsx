@@ -1,5 +1,5 @@
-import Site from "@/components/Site";
+import Desktop from "@/components/os/Desktop";
 
 export default function Home() {
-  return <Site />;
+  return <Desktop />;
 }
