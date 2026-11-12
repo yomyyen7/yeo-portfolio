@@ -1,30 +1,35 @@
 import type { Metadata, Viewport } from "next";
-import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans, Newsreader } from "next/font/google";
 import "./globals.css";
 
-const sans = Space_Grotesk({ variable: "--font-ui", subsets: ["latin"] });
-const mono = JetBrains_Mono({ variable: "--font-code", subsets: ["latin"] });
+const serif = Newsreader({ variable: "--font-serif", subsets: ["latin"], weight: ["400", "500"] });
+const sans = IBM_Plex_Sans({ variable: "--font-sans", subsets: ["latin"], weight: ["400", "500", "600"] });
+const mono = IBM_Plex_Mono({ variable: "--font-mono", subsets: ["latin"], weight: ["400", "500"] });
 
 export const metadata: Metadata = {
-  title: "Yomoyaha Yeo — Software Developer",
+  metadataBase: new URL("https://yeo-portfolio-theta.vercel.app"),
+  title: "Yomoyaha Yeo — Développeur logiciel",
   description:
-    "Portfolio de Yomoyaha Yeo, développeur logiciel et étudiant en Master 1 Cybersécurité & IA : un bureau interactif avec terminal, assistant IA vocal, projets et scènes 3D.",
+    "Portfolio de Yomoyaha Yeo, développeur logiciel en Master 1 Cybersécurité et Intelligence Artificielle à l'ESATIC (Abidjan) : projets, parcours, compétences et contact.",
   openGraph: {
-    title: "Yomoyaha Yeo — Software Developer",
-    description: "Un portfolio en forme de système d'exploitation : terminal, assistant IA, projets et 3D.",
+    title: "Yomoyaha Yeo — Développeur logiciel",
+    description: "Développeur logiciel, spécialisé en cybersécurité et en intelligence artificielle.",
     type: "website",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#07090f",
   width: "device-width",
   initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f6f4ef" },
+    { media: "(prefers-color-scheme: dark)", color: "#121214" },
+  ],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={`${sans.variable} ${mono.variable}`}>
+    <html lang="fr" className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
       <body>{children}</body>
     </html>
   );

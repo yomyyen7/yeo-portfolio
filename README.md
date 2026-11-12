@@ -1,21 +1,20 @@
-# YeoOS — portfolio de Yomoyaha Yeo
+# Portfolio de Yomoyaha Yeo
 
-Un portfolio en forme de système d'exploitation : écran de démarrage, bureau, fenêtres, terminal, scènes 3D et assistant IA vocal.
+Portfolio de Yomoyaha Yeo, développeur logiciel en Master 1 Cybersécurité et Intelligence Artificielle à l'ESATIC (Abidjan).
 
 **En ligne :** https://yeo-portfolio-theta.vercel.app
 
-## Ce qu'on y trouve
+## Contenu
 
-- **Bureau complet** : fenêtres déplaçables, redimensionnables et aimantées aux bords, dock, menu contextuel, recherche universelle (`Ctrl + K`).
-- **Terminal** : `aide`, `neofetch`, `projets`, `scan`, `matrix`, `fond bouclier`, `lang en`…
-- **3D** : trois scènes générées en code (noyau, réseau de neurones, bouclier), utilisées en fond d'écran et dans l'Atelier 3D.
-- **Assistant IA** : répond aux questions sur le profil, par écrit ou à la voix, et ouvre les fenêtres utiles.
-- **GitHub en direct** : les dépôts publics sont chargés depuis l'API GitHub.
-- **Français / anglais** : tout le contenu est bilingue.
+- Projets présentés en études de cas : contexte, rôle, besoin, réalisation, technologies.
+- Parcours, compétences et contact.
+- Dépôts GitHub publics, chargés en direct depuis l'API GitHub.
+- Page CV (`/cv`), enregistrable en PDF depuis le navigateur.
+- Version française et anglaise.
 
 ## Technologies
 
-Next.js 15 · React 19 · TypeScript · Three.js (`@react-three/fiber`, `drei`, `postprocessing`) · SDK Anthropic · Vercel
+Next.js 15 · React 19 · TypeScript · Three.js (`@react-three/fiber`) · Vercel
 
 ## Lancer le projet
 
@@ -26,21 +25,16 @@ npm run dev
 
 Puis ouvrir http://localhost:3000.
 
-## Déploiement
-
-Le dépôt est relié à Vercel : chaque `git push` sur la branche `main` met le site en ligne automatiquement.
-
 ## Modifier le contenu
 
 Tout le contenu (présentation, projets, compétences, parcours) se trouve dans un seul fichier bilingue : `src/lib/data.ts`.
 
-## Assistant IA
+Pour ajouter une capture d'écran à un projet, placer l'image dans `public/projects/` et renseigner le champ `image` du projet (par exemple `image: "/projects/oxynova.png"`).
 
-Sans configuration, l'assistant fonctionne en « mode démo » avec des réponses préparées (`src/lib/assistant.ts`). Pour utiliser un vrai modèle, définir ces variables d'environnement :
+## Déploiement
 
-| Variable | Rôle |
-| --- | --- |
-| `ANTHROPIC_API_KEY` | Clé d'API Anthropic (obligatoire pour activer l'IA) |
-| `CHAT_MODEL` | Modèle utilisé, par exemple `claude-haiku-5-5` (facultatif) |
+Le dépôt est relié à Vercel : chaque `git push` sur la branche `main` met le site en ligne automatiquement.
 
-Ne jamais placer la clé dans le code : les fichiers `.env*` sont ignorés par git.
+## Ancienne version
+
+La première version, en forme de système d'exploitation, est conservée dans la branche `yeoos-v1`.
